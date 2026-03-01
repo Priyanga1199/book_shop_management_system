@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="UTF-8">
+<title>Edit Books - BookWorld</title>
+<link
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.mi
+n.css" rel="stylesheet"
+integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuI
+AvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+<div align="right">
+<a href="/logout">
+ <button class="btn btn-primary w-100">Logout</button>
+</a>
+&nbsp;&nbsp;
+<a th:href="@{/viewbooks}">
+<button class="btn btn-primary w-100">Registered
+Books</button>
+</a>
+</div>
+<div class="container mt-5">
+ <h2 class="text-center mb-4">Edit Book Form</h2>
+<div class="card p-4 shadow" style="width: 500px; margin: auto;">
+<form method="post" th:action="@{/update}" th:object="${book}">
+<input type="hidden" th:field="*{id}" />
+<table>
+<tr>
+<td><label>Book Title</label></td>
+<td><input type="text" th:field="*{title}" readonly class="form-control"  required="required"/></td>
+<td><span th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span></td>
+</tr>
+<tr>
+<td><label>Author Name</label></td>
+<td><input type="text" th:field="*{author}" class="form-control"  required="required"/>
+</td>
+<td><span th:if="${#fields.hasErrors('author')}" th:errors="*{author}"></span></td>
+</tr>
+<tr>
+<td><label>Book Price</label></td>
+<td><input type="number" step="any" min="100" th:field="*{price}" class="form-control"  required="required"/></td>
+<td><span th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></span></td>
+</tr>
+<tr>
+<td><label>Book Quantity</label></td>
+<td><input type="number" step="any" min="0" th:field="*{quantity}" class="form-control"  required="required"/></td>
+<td><span th:if="${#fields.hasErrors('quantity')}" th:errors="*{quantity}"></span></td>
+</tr>
+<tr>
+	<td colspan="3"><button type="submit">Save Changes</button>
+</td>
+</tr>
+</table>
+</form>
+</div>
+</div>
+</body>
+</html>
