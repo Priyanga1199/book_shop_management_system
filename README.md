@@ -17,7 +17,16 @@ Book Shop Management System built using Spring Boot and MySQL.
 - MySQL
 - Maven
 
-## ▶ How to Run
-1. Clone the repository
-2. Configure MySQL in application.properties
-3. Run BookShopAppApplication.java
+## ▶ How to Run the Project
+
+1. Clone the repository:
+   git clone https://github.com/Priyanga1199/book_shop_management_system.git
+
+2. Open the project in Eclipse.
+
+3. Configure MySQL in application.properties.
+
+4. Run BookShopAppApplication.java
+
+5. Open browser:
+   http://localhost:8080
